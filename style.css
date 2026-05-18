@@ -1,0 +1,480 @@
+:root {
+  --black: #121212;
+  --white: #ffffff;
+  --beige: #e9e3da;
+  --light-beige: #f5f2ed;
+  --text: #1f1f1f;
+  --muted: #5a5a5a;
+  --border: #d8d1c7;
+  --container: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Serif TC", "Times New Roman", serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(100% - 3rem, var(--container));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.alt-bg {
+  background: var(--light-beige);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgb(255 255 255 / 90%);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4.5rem;
+  gap: 2rem;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.main-nav a {
+  color: var(--muted);
+}
+
+.main-nav a:hover {
+  color: var(--black);
+}
+
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: grid;
+  align-items: end;
+  color: var(--white);
+  padding: 0;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgb(0 0 0 / 55%), rgb(0 0 0 / 55%)),
+    linear-gradient(130deg, #2d2d2d 0%, #505050 46%, #1f1f1f 100%);
+}
+
+.hero-content {
+  position: relative;
+  padding-bottom: 6rem;
+  max-width: 760px;
+}
+
+.eyebrow,
+.section-label {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  margin: 0.6rem 0 1rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  margin: 0;
+  color: #efefef;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1.8rem;
+  border: 1px solid var(--white);
+  padding: 0.65rem 1.2rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.btn:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+h2 {
+  margin: 0.4rem 0 0;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.3;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.cards {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.portfolio-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.portfolio-item {
+  margin: 0;
+}
+
+.placeholder {
+  aspect-ratio: 4 / 3;
+  background:
+    linear-gradient(140deg, #ded8cf 0%, #cfc7bd 48%, #ebe6de 100%);
+  border: 1px solid var(--border);
+}
+
+figcaption {
+  font-size: 0.95rem;
+  margin-top: 0.55rem;
+  color: var(--muted);
+}
+
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.contact-list a {
+  text-decoration: underline;
+}
+
+.site-footer {
+  background: var(--black);
+  color: #d5d5d5;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .main-nav {
+    gap: 1rem;
+    font-size: 0.88rem;
+  }
+
+  .two-col,
+  .contact-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .cards,
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 2rem, var(--container));
+  }
+
+  .nav-wrap {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.75rem 0;
+    gap: 0.5rem;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: 78vh;
+  }
+
+  .hero-content {
+    padding-bottom: 3.5rem;
+  }
+
+  .cards,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.shooting-zone {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 70% 25%, rgb(233 227 218 / 74%), transparent 32rem),
+    linear-gradient(135deg, var(--black), #2a2926 58%, #f1ebe3 58.2%);
+  color: var(--white);
+}
+
+.shooting-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(20rem, 1.05fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.shooting-copy p:not(.section-label) {
+  max-width: 34rem;
+  color: #e8e2d9;
+}
+
+.shooting-stage {
+  position: relative;
+  min-height: 25rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 2rem;
+  background:
+    linear-gradient(rgb(18 18 18 / 22%), rgb(18 18 18 / 42%)),
+    radial-gradient(circle, rgb(255 255 255 / 18%) 0 12%, transparent 12.5%),
+    var(--beige);
+  box-shadow: 0 2rem 5rem rgb(0 0 0 / 24%);
+  isolation: isolate;
+}
+
+.frog-animation {
+  position: absolute;
+  inset: auto 8% 4% auto;
+  width: min(52%, 18rem);
+  aspect-ratio: 1;
+  opacity: 0.48;
+  transform-origin: center bottom;
+  animation: frog-float 3.5s ease-in-out infinite;
+  z-index: 0;
+}
+
+.frog-frame {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+}
+
+.frog-frame-1 {
+  background-image: url("assets/green_frog1.png");
+  animation: frog-frame-1 3.5s step-end infinite;
+}
+
+.frog-frame-2 {
+  background-image: url("assets/green_frog2.png");
+  animation: frog-frame-2 3.5s step-end infinite;
+}
+
+.frog-frame-3 {
+  background-image: url("assets/green_frog3.png");
+  animation: frog-frame-3 3.5s step-end infinite;
+}
+
+.frog-frame-4 {
+  background-image: url("assets/green_frog4.png");
+  animation: frog-frame-4 3.5s step-end infinite;
+}
+
+.frog-frame-5 {
+  background-image: url("assets/green_frog5.png");
+  animation: frog-frame-5 3.5s step-end infinite;
+}
+
+.frog-frame-6 {
+  background-image: url("assets/green_frog6.png");
+  animation: frog-frame-6 3.5s step-end infinite;
+}
+
+.frog-frame-7 {
+  background-image: url("assets/green_frog7.png");
+  animation: frog-frame-7 3.5s step-end infinite;
+}
+
+.lawyer-button {
+  width: clamp(9rem, 18vw, 13rem);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgb(18 18 18 / 16%);
+  background: var(--black);
+  color: var(--white);
+  font-size: clamp(1.25rem, 2.4vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  box-shadow:
+    0 1.5rem 3rem rgb(18 18 18 / 32%),
+    inset 0 0 0 0.6rem rgb(255 255 255 / 7%);
+  animation: button-pulse 2.2s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.25s ease;
+}
+
+.lawyer-button:hover {
+  transform: translateY(-0.25rem) scale(1.03);
+}
+
+@keyframes frog-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg) scale(0.96);
+  }
+
+  50% {
+    transform: translateY(-1.1rem) rotate(3deg) scale(1.03);
+  }
+}
+
+@keyframes button-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 1.5rem 3rem rgb(18 18 18 / 32%),
+      0 0 0 0 rgb(18 18 18 / 24%),
+      inset 0 0 0 0.6rem rgb(255 255 255 / 7%);
+  }
+
+  50% {
+    box-shadow:
+      0 1.8rem 3.5rem rgb(18 18 18 / 36%),
+      0 0 0 1.2rem rgb(18 18 18 / 0%),
+      inset 0 0 0 0.6rem rgb(255 255 255 / 11%);
+  }
+}
+
+@keyframes frog-frame-1 {
+  0%, 13.99% { opacity: 1; }
+  14%, 100% { opacity: 0; }
+}
+
+@keyframes frog-frame-2 {
+  0%, 13.99%, 28%, 100% { opacity: 0; }
+  14%, 27.99% { opacity: 1; }
+}
+
+@keyframes frog-frame-3 {
+  0%, 27.99%, 42%, 100% { opacity: 0; }
+  28%, 41.99% { opacity: 1; }
+}
+
+@keyframes frog-frame-4 {
+  0%, 41.99%, 56%, 100% { opacity: 0; }
+  42%, 55.99% { opacity: 1; }
+}
+
+@keyframes frog-frame-5 {
+  0%, 55.99%, 70%, 100% { opacity: 0; }
+  56%, 69.99% { opacity: 1; }
+}
+
+@keyframes frog-frame-6 {
+  0%, 69.99%, 84%, 100% { opacity: 0; }
+  70%, 83.99% { opacity: 1; }
+}
+
+@keyframes frog-frame-7 {
+  0%, 83.99% { opacity: 0; }
+  84%, 100% { opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .shooting-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .shooting-stage {
+    min-height: 22rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .shooting-stage {
+    min-height: 18rem;
+    border-radius: 1.25rem;
+  }
+
+  .frog-animation {
+    inset: auto 2% 2% auto;
+    width: 64%;
+  }
+}
